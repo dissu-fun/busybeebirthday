@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Countdown({ targetDate }) {
+export default function Countdown({ targetDate, onFinish }) {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
@@ -11,6 +11,7 @@ export default function Countdown({ targetDate }) {
       if (diff <= 0) {
         clearInterval(countdown);
         setTimeLeft("🎉 It's Time!");
+        if (onFinish) onFinish();
         return;
       }
 
@@ -23,7 +24,7 @@ export default function Countdown({ targetDate }) {
     }, 1000);
 
     return () => clearInterval(countdown);
-  }, [targetDate]);
+  }, [targetDate, onFinish]);
 
   return (
     <div className="text-2xl text-center font-mono text-pink-600">
