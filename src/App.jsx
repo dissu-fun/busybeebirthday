@@ -11,7 +11,7 @@ function App() {
   const [isBirthday, setIsBirthday] = useState(false);
 
   // Set your birthday date/time here
- const birthday = "2025-08-29T12:40:00+03:00";
+const birthday = "2025-08-29T01:00:00+03:00";
 
   
 
