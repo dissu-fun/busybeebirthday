@@ -11,9 +11,9 @@
 export default function VideoPlayer() {
   return (
     <video width="100%" controls autoPlay muted playsInline>
+      <source src="/videos/vid1.mp4" type="video/mp4" />
       <source src="/videos/vid1.webm" type="video/webm" />
       Your browser does not support the video tag.
     </video>
   );
 }
-
